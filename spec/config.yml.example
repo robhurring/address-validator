@@ -1,0 +1,5 @@
+# copy this file to spec/config.yml and place your username, password, apikey here
+
+access_key: youraccesstoken
+username: user
+password: password

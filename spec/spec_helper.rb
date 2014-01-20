@@ -6,12 +6,12 @@ Bundler.require(:default, :test)
 require 'faker'
 require 'address_validator'
 
-config_file = File.expand_path('../api.yml', __FILE__)
+config_file = File.expand_path('../config.yml', __FILE__)
 if File.exists?(config_file)
   API_CONFIG = YAML.load_file(config_file)
 else
   puts "ERROR!"
-  puts "No config file was found! Copy the api.yml.example file to spec/api.yml and fill out the details."
+  puts "No config file was found! Copy the config.yml.example file to spec/config.yml and fill out the details."
   exit 1
 end
 
