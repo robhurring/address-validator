@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://onlinetools.ups.com/ups.app/xml/XAV
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><AccessRequest><AccessLicenseNumber>%{AccessLicenseNumber}</AccessLicenseNumber><UserId>%{UserId}</UserId><Password>%{Password}</Password></AccessRequest><?xml
+        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>3</MaximumListSize><AddressKeyFormat><ConsigneeName>Doctor
+        Daves Backyard Dentistry</ConsigneeName><AddressLine>1 Sketchy Alley</AddressLine><PoliticalDivision2>New
+        York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10012</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 Jan 2014 16:17:21 GMT
+      Server:
+      - Apache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '365'
+      Content-Type:
+      - application/xml
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0"?><AddressValidationResponse><Response><TransactionReference></TransactionReference><ResponseStatusCode>1</ResponseStatusCode><ResponseStatusDescription>Success</ResponseStatusDescription></Response><NoCandidatesIndicator/><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification></AddressValidationResponse>
+    http_version: 
+  recorded_at: Fri, 31 Jan 2014 16:17:21 GMT
+recorded_with: VCR 2.4.0
