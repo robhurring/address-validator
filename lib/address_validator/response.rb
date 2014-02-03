@@ -34,5 +34,9 @@ module AddressValidator
     def no_canidates?
       response.has_key?('NoCandidatesIndicator')
     end
+
+    def address
+      AddressValidator::Address.from_xml(response['AddressKeyFormat'])
+    end
   end
 end
