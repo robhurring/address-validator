@@ -16,6 +16,16 @@ And then execute:
 
 ## Usage
 
+Configuring the client
+
+```ruby
+AddressValidator.configure do |config|
+  config.key = 'youraccesskeyfromups'
+  config.username = 'username'
+  config.password = 'hunter2'
+end
+```
+
 Basic Example
 
 ```ruby
