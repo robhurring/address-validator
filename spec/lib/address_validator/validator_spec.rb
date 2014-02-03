@@ -16,7 +16,7 @@ describe AddressValidator::Validator do
      end
 
     describe '#validate' do
-      let(:response){ validator.validate(address: address) }
+      let(:response){ validator.validate(address) }
 
       it 'should be HTTP ok' do
         response.should be_ok
@@ -28,6 +28,14 @@ describe AddressValidator::Validator do
 
       it 'should be a valid address' do
         response.should be_valid
+      end
+
+      it 'should have an address' do
+        response.address.should_not be_nil
+      end
+
+      it 'should have no errors' do
+        response.error.should be_nil
       end
     end
   end
@@ -45,7 +53,7 @@ describe AddressValidator::Validator do
      end
 
     describe '#validate' do
-      let(:response){ validator.validate(address: address) }
+      let(:response){ validator.validate(address) }
 
       it 'should be HTTP ok' do
         response.should be_ok
