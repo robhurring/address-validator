@@ -23,6 +23,11 @@ module AddressValidator
       @response ||= self['AddressValidationResponse']
     end
 
+    def error
+      _error_container = response['Response']['Error']
+      _error_container && _error_container['ErrorDescription']
+    end
+
     def valid?
       response.has_key?('ValidAddressIndicator')
     end
