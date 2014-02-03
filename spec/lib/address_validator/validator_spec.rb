@@ -69,5 +69,40 @@ describe AddressValidator::Validator do
     end
   end
 
+  context 'when passing in address hashes', vcr: {cassette_name: 'valid-address-hash'} do
+    let(:address_hash) do
+      {
+        name: 'Yum',
+        street1: '33 St. Marks Place',
+        city: 'New York',
+        state: 'NY',
+        zip: '10003',
+        country: 'US'
+      }
+     end
 
+    describe '#validate' do
+      let(:response){ validator.validate(address_hash) }
+
+      it 'should be HTTP ok' do
+        response.should be_ok
+      end
+
+      it 'should be a successful request' do
+        response.should be_success
+      end
+
+      it 'should be a valid address' do
+        response.should be_valid
+      end
+
+      it 'should have an address' do
+        response.address.should_not be_nil
+      end
+
+      it 'should have no errors' do
+        response.error.should be_nil
+      end
+    end
+  end
 end
