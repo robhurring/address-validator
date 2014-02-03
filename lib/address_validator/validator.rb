@@ -8,14 +8,13 @@ module AddressValidator
       @client = Client.new
     end
 
-    def validate(address: address)
+    def validate(address)
       if address.is_a?(::Hash)
         address = build_address(address)
       end
 
       request = build_request(address)
-      api_response = @client.post(request)
-
+      @client.post(request)
     end
 
     def build_address(attrs)
