@@ -28,10 +28,10 @@ module AddressValidator
       xml.instruct!
       xml.AddressValidationRequest do
         xml.Request do
-          xml.RequestAction 'XAV'
-          xml.RequestOption '3'
+          xml.RequestAction 'XAV' # must be XAV
+          xml.RequestOption '3'   # validation + classification
         end
-        xml.MaximumListSize '3'
+        xml.MaximumListSize('1')
         xml << address.to_xml
       end
 
