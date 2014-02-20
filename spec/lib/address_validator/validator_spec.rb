@@ -8,6 +8,7 @@ describe AddressValidator::Validator do
       AddressValidator::Address.new(
         name: 'Yum',
         street1: '33 St. Marks Place',
+        street2: 'Suite 3',
         city: 'New York',
         state: 'NY',
         zip: '10003',
@@ -44,7 +45,7 @@ describe AddressValidator::Validator do
     let(:address) do
       AddressValidator::Address.new(
         name: 'Doctor Daves Backyard Dentistry',
-        street1: '1 Sketchy Alley',
+        street1: '1 Seseme Street',
         city: 'New York',
         state: 'NY',
         zip: '10012',
@@ -74,6 +75,8 @@ describe AddressValidator::Validator do
       {
         name: 'Yum',
         street1: '33 St. Marks Place',
+        street2: 'Suite 3',
+        street3: 'C/O Some Dude',
         city: 'New York',
         state: 'NY',
         zip: '10003',

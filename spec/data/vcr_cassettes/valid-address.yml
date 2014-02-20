@@ -6,8 +6,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><AccessRequest><AccessLicenseNumber>%{AccessLicenseNumber}</AccessLicenseNumber><UserId>%{UserId}</UserId><Password>%{Password}</Password></AccessRequest><?xml
-        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>3</MaximumListSize><AddressKeyFormat><ConsigneeName>Yum</ConsigneeName><AddressLine>33
-        St. Marks Place</AddressLine><PoliticalDivision2>New York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
+        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>1</MaximumListSize><AddressKeyFormat><ConsigneeName>Yum</ConsigneeName><AddressLine>33
+        St. Marks Place</AddressLine><AddressLine>Suite 3</AddressLine><PoliticalDivision2>New
+        York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
     headers: {}
   response:
     status:
@@ -15,7 +16,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 03 Feb 2014 17:31:10 GMT
+      - Thu, 20 Feb 2014 18:02:07 GMT
       Server:
       - Apache
       X-Frame-Options:
@@ -23,14 +24,14 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '799'
+      - '831'
       Content-Type:
       - application/xml
     body:
       encoding: UTF-8
       string: <?xml version="1.0"?><AddressValidationResponse><Response><TransactionReference></TransactionReference><ResponseStatusCode>1</ResponseStatusCode><ResponseStatusDescription>Success</ResponseStatusDescription></Response><ValidAddressIndicator/><AddressClassification><Code>2</Code><Description>Residential</Description></AddressClassification><AddressKeyFormat><AddressClassification><Code>2</Code><Description>Residential</Description></AddressClassification><AddressLine>33
-        ST MARKS PL</AddressLine><Region>NEW YORK NY 10003-7817</Region><PoliticalDivision2>NEW
-        YORK</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><PostcodeExtendedLow>7817</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationResponse>
+        ST MARKS PL</AddressLine><AddressLine>APT 3</AddressLine><Region>NEW YORK
+        NY 10003-7832</Region><PoliticalDivision2>NEW YORK</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><PostcodeExtendedLow>7832</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationResponse>
     http_version: 
-  recorded_at: Mon, 03 Feb 2014 17:31:11 GMT
+  recorded_at: Thu, 20 Feb 2014 18:02:07 GMT
 recorded_with: VCR 2.4.0
