@@ -36,7 +36,7 @@ module AddressValidator
       response.has_key?('AmbiguousAddressIndicator')
     end
 
-    def no_canidates?
+    def no_candidates?
       response.has_key?('NoCandidatesIndicator')
     end
 
