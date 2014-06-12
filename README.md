@@ -23,6 +23,7 @@ AddressValidator.configure do |config|
   config.key = 'youraccesskeyfromups'
   config.username = 'username'
   config.password = 'hunter2'
+  config.maximum_list_size = 5
 end
 ```
 
