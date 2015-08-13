@@ -53,7 +53,7 @@ module AddressValidator
     end
 
     def suggestions
-      ambiguous? ? addresses : []
+      addresses.any? ? addresses : []
     end
   end
 end
