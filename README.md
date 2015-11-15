@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/robhurring/address-validator.svg)](https://travis-ci.org/robhurring/address-validator)
+
 # AddressValidator
 
 Wrapper around the UPS street level validation API. Nowhere near a complete implementation. This will just give some basic information back, such as address classification (residential/commercial) and if it is valid or not.
