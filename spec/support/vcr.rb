@@ -11,7 +11,7 @@ end
 
 # Re-Record all VCR cassettes
 # Usage: RERECORD=1 rspec
-if !ENV['RERECORD'].nil?
+unless ENV['RERECORD'].to_i.zero?
   $stderr << "Re-Recording...\n\n"
 
   VCR.configure do |c|
