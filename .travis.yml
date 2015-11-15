@@ -2,5 +2,5 @@ language: ruby
 rvm:
   - 2.2.3
 before_install:
-  - ln -nsf ./spec/config.yml.example ./spec/config.yml
+  - cp ./spec/config.yml.example ./spec/config.yml
 script: bundle exec rspec
