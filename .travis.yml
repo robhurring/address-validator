@@ -1,0 +1,9 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.0.0
+  - 2.1.0
+  - 2.2.3
+before_install:
+  - cp ./spec/config.yml.example ./spec/config.yml
+script: bundle exec rspec
