@@ -30,6 +30,7 @@ module AddressValidator
           city: attrs['PoliticalDivision2'],
           state: attrs['PoliticalDivision1'],
           zip: attrs['PostcodePrimaryLow'],
+          zip_extended: attrs['PostcodeExtendedLow'],
           country: attrs['CountryCode'],
           classification: classification
         )
@@ -46,6 +47,7 @@ module AddressValidator
       @city = city
       @state = state
       @zip = zip
+      @zip_extended = zip_extended
       @country = country
       @classification = (classification || CLASSIFICATION_UNKNOWN).to_i
     end
@@ -70,6 +72,7 @@ module AddressValidator
         xml.PoliticalDivision2(self.city)
         xml.PoliticalDivision1(self.state)
         xml.PostcodePrimaryLow(self.zip)
+        xml.PostcodeExtendedLow(self.zip_extended)
         xml.CountryCode(self.country)
       end
 

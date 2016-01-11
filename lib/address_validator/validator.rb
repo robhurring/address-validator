@@ -6,6 +6,7 @@ module AddressValidator
 
     def initialize
       @client = Client.new
+      @config = AddressValidator.config
     end
 
     def validate(address)
@@ -30,7 +31,7 @@ module AddressValidator
           xml.RequestAction 'XAV' # must be XAV
           xml.RequestOption '3'   # validation + classification
         end
-        xml.MaximumListSize('1')
+        xml.MaximumListSize(@config.maximum_list_size || 1)
         xml << address.to_xml
       end
 
