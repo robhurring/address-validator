@@ -6,17 +6,23 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><AccessRequest><AccessLicenseNumber>%{AccessLicenseNumber}</AccessLicenseNumber><UserId>%{UserId}</UserId><Password>%{Password}</Password></AccessRequest><?xml
-        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>3</MaximumListSize><AddressKeyFormat><ConsigneeName>Doctor
-        Daves Backyard Dentistry</ConsigneeName><AddressLine>1 Sketchy Alley</AddressLine><PoliticalDivision2>New
+        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>1</MaximumListSize><AddressKeyFormat><ConsigneeName>Doctor
+        Daves Backyard Dentistry</ConsigneeName><AddressLine>1 Seseme Street</AddressLine><PoliticalDivision2>New
         York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10012</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 03 Feb 2014 17:31:11 GMT
+      - Sun, 15 Nov 2015 00:36:42 GMT
       Server:
       - Apache
       X-Frame-Options:
@@ -25,11 +31,13 @@ http_interactions:
       - no-cache
       Content-Length:
       - '365'
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
       - application/xml
     body:
       encoding: UTF-8
       string: <?xml version="1.0"?><AddressValidationResponse><Response><TransactionReference></TransactionReference><ResponseStatusCode>1</ResponseStatusCode><ResponseStatusDescription>Success</ResponseStatusDescription></Response><NoCandidatesIndicator/><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification></AddressValidationResponse>
     http_version: 
-  recorded_at: Mon, 03 Feb 2014 17:31:11 GMT
+  recorded_at: Sun, 15 Nov 2015 00:36:42 GMT
 recorded_with: VCR 2.4.0

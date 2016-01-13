@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/robhurring/address-validator.svg)](https://travis-ci.org/robhurring/address-validator)
+
 # AddressValidator
 
 Wrapper around the UPS street level validation API. Nowhere near a complete implementation. This will just give some basic information back, such as address classification (residential/commercial) and if it is valid or not.
@@ -8,7 +10,7 @@ This can be modified to include address suggestions pretty easily in the `Valida
 
 Add this line to your application's Gemfile:
 
-    gem 'address_validator', github: 'youbeauty/address-validator'
+    gem 'address_validator', github: 'robhurring/address-validator'
 
 And then execute:
 

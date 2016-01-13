@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["robhurring@gmail.com"]
   gem.description   = %q{UPS address validation gem}
   gem.summary       = %q{Simple address validator using the UPS address validation API}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/robhurring/address-validator"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

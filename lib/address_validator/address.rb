@@ -19,17 +19,14 @@ module AddressValidator
           classification = _classification['Code']
         end
 
-        street1, street2 = nil, nil
-        if attrs['AddressLine'].kind_of?(Array)
-          street1 = attrs['AddressLine'][0]
-          street2 = attrs['AddressLine'][1]
-        else
-          street1 = attrs['AddressLine']
-        end
+        # AddressLine can come in as a single element, or upto 3 elements according
+        # to the UPS docs, so we force it into an array and split them up
+        address_lines = Array(attrs['AddressLine'])
 
         new(
-          street1: street1,
-          street2: street2,
+          street1: address_lines[0],
+          street2: address_lines[1],
+          street3: address_lines[2],
           city: attrs['PoliticalDivision2'],
           state: attrs['PoliticalDivision1'],
           zip: attrs['PostcodePrimaryLow'],
@@ -40,18 +37,19 @@ module AddressValidator
       end
     end
 
-    attr_accessor :name, :street1, :street2, :city, :state, :zip, :zip_extended, :country, :classification
+    attr_accessor :name, :street1, :street2, :street3, :city, :state, :zip, :zip_extended, :country, :classification
 
-    def initialize(name: name, street1: street1, street2: street2, city: city, state: state, zip: zip, zip_extended: zip_extended, country: country, classification: classification)
+    def initialize(name: nil, street1: nil, street2: nil, street3: nil, city: nil, state: nil, zip: nil, zip_extended: nil, country: nil, classification: nil)
       @name = name
       @street1 = street1
       @street2 = street2
+      @street3 = street3
       @city = city
       @state = state
       @zip = zip
       @zip_extended = zip_extended
       @country = country
-      @classification = classification || CLASSIFICATION_UNKNOWN
+      @classification = (classification || CLASSIFICATION_UNKNOWN).to_i
     end
 
     def residential?
@@ -63,11 +61,14 @@ module AddressValidator
     end
 
     def to_xml(options={})
+
       xml = Builder::XmlMarkup.new(options)
 
       xml.AddressKeyFormat do
         xml.ConsigneeName(self.name)
-        xml.AddressLine([self.street1, self.street2].join(' '))
+        xml.tag! 'AddressLine', self.street1
+        xml.tag! 'AddressLine', self.street2 if self.street2
+        xml.tag! 'AddressLine', self.street3 if self.street3
         xml.PoliticalDivision2(self.city)
         xml.PoliticalDivision1(self.state)
         xml.PostcodePrimaryLow(self.zip)
