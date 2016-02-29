@@ -36,12 +36,24 @@ module AddressValidator
       response.has_key?('AmbiguousAddressIndicator')
     end
 
-    def no_canidates?
+    def no_candidates?
       response.has_key?('NoCandidatesIndicator')
     end
 
+    def addresses
+      if response['AddressKeyFormat'].is_a? Array
+        addresses = response['AddressKeyFormat'].map { |address| AddressValidator::Address.from_xml(address) }
+      else
+        addresses = [ AddressValidator::Address.from_xml(response['AddressKeyFormat']) ]
+      end
+    end
+
     def address
-      AddressValidator::Address.from_xml(response['AddressKeyFormat'])
+      valid? ? addresses.first : nil
+    end
+
+    def suggestions
+      addresses.any? ? addresses : []
     end
   end
 end

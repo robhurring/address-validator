@@ -13,6 +13,7 @@ if File.exists?(config_file)
   default_config.key = API_CONFIG['access_key']
   default_config.username = API_CONFIG['username']
   default_config.password = API_CONFIG['password']
+  default_config.maximum_list_size = API_CONFIG['maximum_list_size']
 else
   puts "ERROR!"
   puts "No config file was found! Copy the config.yml.example file to spec/config.yml and fill out the details."

@@ -108,4 +108,41 @@ describe AddressValidator::Validator do
       end
     end
   end
+
+  context 'when passing in an ambiguous address', vcr: {cassette_name: 'ambiguous-address'} do
+    let(:address) do
+      AddressValidator::Address.new(
+        name: 'Brady Somerville',
+        street1: 'Nashville Rd',
+        city: 'Bowling Green',
+        state: 'KY',
+        zip: '42104',
+        country: 'US',
+      )
+    end
+
+    describe '#validate' do
+      let(:response){ validator.validate(address) }
+
+      it 'should be HTTP ok' do
+        response.should be_ok
+      end
+
+      it 'should be a successful request' do
+        response.should be_success
+      end
+
+      it 'should be an ambiguous address' do
+        response.should be_ambiguous
+      end
+
+      it 'should not have an address' do
+        response.address.should be_nil
+      end
+
+      it 'should have suggestions' do
+        response.suggestions.should be_an Array
+      end
+    end
+  end
 end

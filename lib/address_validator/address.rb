@@ -30,15 +30,16 @@ module AddressValidator
           city: attrs['PoliticalDivision2'],
           state: attrs['PoliticalDivision1'],
           zip: attrs['PostcodePrimaryLow'],
+          zip_extended: attrs['PostcodeExtendedLow'],
           country: attrs['CountryCode'],
           classification: classification
         )
       end
     end
 
-    attr_accessor :name, :street1, :street2, :street3, :city, :state, :zip, :country, :classification
+    attr_accessor :name, :street1, :street2, :street3, :city, :state, :zip, :zip_extended, :country, :classification
 
-    def initialize(name: name(), street1: street1(), street2: street2(), street3: street3(), city: city(), state: state(), zip: zip(), country: country(), classification: classification())
+    def initialize(name: nil, street1: nil, street2: nil, street3: nil, city: nil, state: nil, zip: nil, zip_extended: nil, country: nil, classification: nil)
       @name = name
       @street1 = street1
       @street2 = street2
@@ -46,6 +47,7 @@ module AddressValidator
       @city = city
       @state = state
       @zip = zip
+      @zip_extended = zip_extended
       @country = country
       @classification = (classification || CLASSIFICATION_UNKNOWN).to_i
     end
@@ -70,6 +72,7 @@ module AddressValidator
         xml.PoliticalDivision2(self.city)
         xml.PoliticalDivision1(self.state)
         xml.PostcodePrimaryLow(self.zip)
+        xml.PostcodeExtendedLow(self.zip_extended)
         xml.CountryCode(self.country)
       end
 
