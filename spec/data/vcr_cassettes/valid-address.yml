@@ -8,12 +8,12 @@ http_interactions:
       string: <?xml version="1.0" encoding="UTF-8"?><AccessRequest><AccessLicenseNumber>%{AccessLicenseNumber}</AccessLicenseNumber><UserId>%{UserId}</UserId><Password>%{Password}</Password></AccessRequest><?xml
         version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>1</MaximumListSize><AddressKeyFormat><ConsigneeName>Yum</ConsigneeName><AddressLine>33
         St. Marks Place</AddressLine><AddressLine>Suite 3</AddressLine><PoliticalDivision2>New
-        York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
+        York</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><PostcodeExtendedLow/><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -22,7 +22,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Nov 2015 00:36:41 GMT
+      - Tue, 05 Apr 2016 12:20:39 GMT
       Server:
       - Apache
       X-Frame-Options:
@@ -41,5 +41,5 @@ http_interactions:
         ST MARKS PL</AddressLine><AddressLine>APT 3</AddressLine><Region>NEW YORK
         NY 10003-7832</Region><PoliticalDivision2>NEW YORK</PoliticalDivision2><PoliticalDivision1>NY</PoliticalDivision1><PostcodePrimaryLow>10003</PostcodePrimaryLow><PostcodeExtendedLow>7832</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationResponse>
     http_version: 
-  recorded_at: Sun, 15 Nov 2015 00:36:41 GMT
+  recorded_at: Tue, 05 Apr 2016 12:20:40 GMT
 recorded_with: VCR 2.4.0

@@ -83,6 +83,7 @@ describe AddressValidator::Address do
               <Description>Commercial</Description>
             </AddressClassification>
             <AddressLine>648 BROADWAY</AddressLine>
+            <ConsigneeName>Yum</ConsigneeName>
             <Region>NEW YORK NY 10012-2348</Region>
             <PoliticalDivision2>NEW YORK</PoliticalDivision2>
             <PoliticalDivision1>NY</PoliticalDivision1>
@@ -95,6 +96,7 @@ describe AddressValidator::Address do
 
       subject(:address){ described_class.from_xml(xml['AddressKeyFormat']) }
 
+      its(:name){ should eq 'Yum' }
       its(:street1){ should eq '648 BROADWAY' }
       its(:street2){ should be_nil }
       its(:street3){ should be_nil }
@@ -116,6 +118,7 @@ describe AddressValidator::Address do
             <AddressLine>648 BROADWAY</AddressLine>
             <AddressLine>SUITE 1</AddressLine>
             <AddressLine>C/O SOME GUY</AddressLine>
+            <ConsigneeName>Yum</ConsigneeName>
             <Region>NEW YORK NY 10012-2348</Region>
             <PoliticalDivision2>NEW YORK</PoliticalDivision2>
             <PoliticalDivision1>NY</PoliticalDivision1>
@@ -128,6 +131,7 @@ describe AddressValidator::Address do
 
       subject(:address){ described_class.from_xml(xml['AddressKeyFormat']) }
 
+      its(:name){ should eq 'Yum' }
       its(:street1){ should eq '648 BROADWAY' }
       its(:street2){ should eq 'SUITE 1' }
       its(:street3){ should eq 'C/O SOME GUY' }

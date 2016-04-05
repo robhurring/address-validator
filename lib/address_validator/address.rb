@@ -24,6 +24,7 @@ module AddressValidator
         address_lines = Array(attrs['AddressLine'])
 
         new(
+          name: attrs['ConsigneeName'],
           street1: address_lines[0],
           street2: address_lines[1],
           street3: address_lines[2],
