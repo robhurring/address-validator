@@ -6,17 +6,23 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><AccessRequest><AccessLicenseNumber>%{AccessLicenseNumber}</AccessLicenseNumber><UserId>%{UserId}</UserId><Password>%{Password}</Password></AccessRequest><?xml
-        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>5</MaximumListSize><AddressKeyFormat><ConsigneeName>Brady
+        version="1.0" encoding="UTF-8"?><AddressValidationRequest><Request><RequestAction>XAV</RequestAction><RequestOption>3</RequestOption></Request><MaximumListSize>1</MaximumListSize><AddressKeyFormat><ConsigneeName>Brady
         Somerville</ConsigneeName><AddressLine>Nashville Rd</AddressLine><PoliticalDivision2>Bowling
-        Green</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42104</PostcodePrimaryLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
-    headers: {}
+        Green</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42104</PostcodePrimaryLow><PostcodeExtendedLow/><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationRequest>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 12 Jun 2014 18:42:27 GMT
+      - Tue, 05 Apr 2016 12:20:41 GMT
       Server:
       - Apache
       X-Frame-Options:
@@ -24,22 +30,16 @@ http_interactions:
       Pragma:
       - no-cache
       Content-Length:
-      - '2584'
+      - '808'
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
       - application/xml
     body:
       encoding: UTF-8
       string: <?xml version="1.0"?><AddressValidationResponse><Response><TransactionReference></TransactionReference><ResponseStatusCode>1</ResponseStatusCode><ResponseStatusDescription>Success</ResponseStatusDescription></Response><AmbiguousAddressIndicator/><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressKeyFormat><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressLine>1-99
         NASHVILLE RD</AddressLine><Region>BOWLING GREEN KY 42101-3800</Region><PoliticalDivision2>BOWLING
-        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>3800</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat><AddressKeyFormat><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressLine>6100-6299
-        NASHVILLE RD</AddressLine><Region>BOWLING GREEN KY 42101-7514</Region><PoliticalDivision2>BOWLING
-        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>7514</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat><AddressKeyFormat><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressLine>6400-6550
-        NASHVILLE RD</AddressLine><Region>BOWLING GREEN KY 42101-7548</Region><PoliticalDivision2>BOWLING
-        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>7548</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat><AddressKeyFormat><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressLine>6551-6599
-        NASHVILLE RD</AddressLine><Region>BOWLING GREEN KY 42101-7547</Region><PoliticalDivision2>BOWLING
-        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>7547</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat><AddressKeyFormat><AddressClassification><Code>0</Code><Description>Unknown</Description></AddressClassification><AddressLine>6600-6699
-        NASHVILLE RD</AddressLine><Region>BOWLING GREEN KY 42101-7518</Region><PoliticalDivision2>BOWLING
-        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>7518</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationResponse>
+        GREEN</PoliticalDivision2><PoliticalDivision1>KY</PoliticalDivision1><PostcodePrimaryLow>42101</PostcodePrimaryLow><PostcodeExtendedLow>3800</PostcodeExtendedLow><CountryCode>US</CountryCode></AddressKeyFormat></AddressValidationResponse>
     http_version: 
-  recorded_at: Thu, 12 Jun 2014 18:42:27 GMT
+  recorded_at: Tue, 05 Apr 2016 12:20:41 GMT
 recorded_with: VCR 2.4.0
